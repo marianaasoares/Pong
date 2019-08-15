@@ -15,6 +15,8 @@ PALETAOFFSET = 20
 # cores
 PRETO = (0, 0, 0)
 BRANCO = (255,255,255)
+AZUL_PANTONE = (177,201,232)
+LILAS_PANTONE = (199,178,222)
  
 # Função para desenhar o fundo
 def desenhaArena():
@@ -26,18 +28,19 @@ def desenhaArena():
  
 # Função para desenhar a paleta
 def desenhaPaleta(paleta):
+    cor = AZUL_PANTONE
     #Impede da paleta ir  além da borda do fundo
     if paleta.bottom > ALTURA_TELA - LARGURA_LINHA:
                 paleta.bottom = ALTURA_TELA - LARGURA_LINHA
         #Impede da paleta ir  além da borda do topo
     elif paleta.top < LARGURA_LINHA:
                 paleta.top = LARGURA_LINHA
-    pygame.draw.rect(DISPLAYSURF, BRANCO, paleta)
+    pygame.draw.rect(DISPLAYSURF, cor, paleta)
  
 # Função para desenhar a bola
 def desenhaBola(bola):
     superficie = DISPLAYSURF
-    cor = BRANCO
+    cor = LILAS_PANTONE
     raio = 5
     centro = (int(bola.x) - raio, int(bola.y) - raio)
     pygame.draw.circle(superficie, cor, centro, raio)
