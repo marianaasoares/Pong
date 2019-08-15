@@ -36,7 +36,12 @@ def desenhaPaleta(paleta):
  
 # Função para desenhar a bola
 def desenhaBola(bola):
-            pygame.draw.rect(DISPLAYSURF, BRANCO, bola)
+    superficie = DISPLAYSURF
+    cor = BRANCO
+    raio = 5
+    centro = (int(bola.x) - raio, int(bola.y) - raio)
+    pygame.draw.circle(superficie, cor, centro, raio)
+    
  
 #altera a direção da bola e retorna ela
 def moveBola(bola, bolaDirX, bolaDirY):
